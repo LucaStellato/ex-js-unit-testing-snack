@@ -1,3 +1,61 @@
+
+describe('manipolazione di stringhe', () => {
+    //snack1
+    test('La funzione getInitials restituisce le iniziali di un nome completo', () => {
+        expect(getInitials('Luca')).toBe('L')
+    })
+
+    //snack5
+    test('La funzione isPalindrome verifica se una stringa è un palindromo', () => {
+        expect(isPalindrome("ciao")).toBeFalsy()
+        expect(isPalindrome('angelalavalalegna')).toBeTruthy()
+    })
+
+})
+
+describe('operazioni su array', () => {
+    //snack3
+    test('La funzione average calcola la media aritmetica di un array di numeri', () => {
+        expect(average([2, 4, 6, 8])).toBe(5)
+    })
+    //snack7
+    test('La funzione findPostById restituisce il post corretto dato l’array di post e l’id', () => {
+        expect(findPostById(posts, 2)).toEqual({ id: 2, title: "Secondo post", slug: "secondo-post" })
+    })
+
+
+
+})
+
+
+
+
+describe('generazione di slug', () => {
+    //snack2
+    test('La funzione createSlug restituisce una stringa in lowercase', () => {
+        expect(firstCreateSlug('Ciao')).toBe('ciao')
+        expect(firstCreateSlug('come StAI')).toBe('come stai')
+    })
+
+    //snack4
+    test('La funzione createSlug sostituisce gli spazi con -', () => {
+        expect(SecondCreateSlug('questo é un test')).toBe('questo-é-un-test')
+    })
+
+    //snack6
+    test('La funzione createSlug lancia un errore se il titolo è vuoto o non valido', () => {
+        expect(() => thirdCreateSlug('')).toThrow()
+    })
+
+
+
+})
+
+
+
+
+
+
 /*Snack 1
 Creare un test che verifichi la seguente descrizione:
 
@@ -7,9 +65,7 @@ function getInitials(stringa) {
     return stringa[0]
 }
 
-test('La funzione getInitials restituisce le iniziali di un nome completo', () => {
-    expect(getInitials('Luca')).toBe('L')
-})
+
 
 
 /*Creare un test che verifichi la seguente descrizione:
@@ -22,10 +78,7 @@ function firstCreateSlug(stringa) {
 }
 
 
-test('La funzione createSlug restituisce una stringa in lowercase', () => {
-    expect(firstCreateSlug('Ciao')).toBe('ciao')
-    expect(firstCreateSlug('come StAI')).toBe('come stai')
-})
+
 
 
 
@@ -40,9 +93,7 @@ function average(array) {
 
 
 
-test('La funzione average calcola la media aritmetica di un array di numeri', () => {
-    expect(average([2, 4, 6, 8])).toBe(5)
-})
+
 
 
 
@@ -60,9 +111,7 @@ function SecondCreateSlug(stringa) {
 }
 
 
-test('La funzione createSlug sostituisce gli spazi con -', () => {
-    expect(SecondCreateSlug('questo é un test')).toBe('questo-é-un-test')
-})
+
 
 
 
@@ -85,10 +134,7 @@ function isPalindrome(palindromeword) {
 
 
 
-test('La funzione isPalindrome verifica se una stringa è un palindromo', () => {
-    expect(isPalindrome("ciao")).toBeFalsy()
-    expect(isPalindrome('angelalavalalegna')).toBeTruthy()
-})
+
 
 
 /*Creare un test che verifichi la seguente descrizione:
@@ -104,9 +150,6 @@ function thirdCreateSlug(title) {
 
 
 
-test('La funzione createSlug lancia un errore se il titolo è vuoto o non valido', () => {
-    expect(() => thirdCreateSlug('')).toThrow()
-})
 
 
 /*Crea un array di oggetti posts, in cui ogni oggetto ha le proprietà id, title e slug.
@@ -129,6 +172,3 @@ const posts = [
 
 
 
-test('La funzione findPostById restituisce il post corretto dato l’array di post e l’id', () => {
-    expect(findPostById(posts, 2)).toEqual({ id: 2, title: "Secondo post", slug: "secondo-post" })
-})
